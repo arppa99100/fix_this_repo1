@@ -13,13 +13,13 @@ install:
   - pip install pytest pytest-cov python-coveralls
 
 script:
-  - if [[ $TRAVIS_PYTHON_VERSION == 2.7 ]];
+  - if [[ $TRAVIS_PYTHON_VERSION == 3.5 ]];
     then py.test -vv example.py --cov example.py;
     else py.test -vv example.py;
     fi
 
 after_success:
-  - if [[ $TRAVIS_PYTHON_VERSION == 2.7 ]];
+  - if [[ $TRAVIS_PYTHON_VERSION == 3.5 ]];
     then coveralls;
     fi
 
